@@ -1,0 +1,22 @@
+name: Weekly Script
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Schedule to run every Monday at 12:00 AM
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Run script
+        run: |
+          python app.py
