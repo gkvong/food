@@ -52,13 +52,19 @@ def index():
     current_week = get_current_week()
     current_restaurant_type, previous_restaurant_type = get_restaurant_type(current_week)
     last_update_date, last_update_time = get_last_update_datetime()
-    return render_template(
-        'index.html',
+    rendered_template = render_template(
+        'dynamic.html',
         current_restaurant_type=current_restaurant_type,
         previous_restaurant_type=previous_restaurant_type,
         last_update_date=last_update_date,
         last_update_time=last_update_time
     )
+
+    # Save the rendered HTML as index.html
+    with open('index.html', 'w') as file:
+        file.write(rendered_template)
+
+    return "Dynamic webpage generated and saved as index.html"
 
 if __name__ == '__main__':
     app.run()
