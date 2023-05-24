@@ -10,21 +10,21 @@ function selectRandomRestaurant() {
   const currentDate = new Date();
   const currentWeek = getISOWeekNumber(currentDate);
 
-  const previousRestaurants = ['Chinese', 'Indian', 'Mexican'];
-
-  // Include the week number, length of previous restaurants list, and last entry of previous restaurants list in the seed
-  const seed = currentWeek.toString() + previousRestaurants.length.toString() + previousRestaurants[previousRestaurants.length - 1];
-
-  // Create a seeded random number generator using the seed
-  const rng = new Math.seedrandom(seed);
+  const previousRestaurants = ['Chinese', 'Indian', 'Mexican']; // Replace with your list of previous restaurants
 
   const restaurants = ['Chinese', 'Korean', 'Japanese', 'Mexican', 'Indian', 'Vietnamese', 'Thai'];
 
   // Exclude previous week's restaurants
   const availableRestaurants = restaurants.filter(restaurant => !previousRestaurants.includes(restaurant));
 
-  // Select a random restaurant using the seeded random number generator
-  const randomIndex = Math.floor(rng() * availableRestaurants.length);
+  // Generate the seed for random number generation
+  const seed = currentWeek * previousRestaurants.length;
+
+  // Create a random number generator with the seed
+  const randomGenerator = new Math.seedrandom(seed.toString());
+
+  // Select a random restaurant
+  const randomIndex = Math.floor(randomGenerator() * availableRestaurants.length);
   const randomRestaurant = availableRestaurants[randomIndex];
 
   // Get the last week's restaurant
