@@ -21,9 +21,23 @@ function selectRandomRestaurant() {
   const randomIndex = Math.floor(Math.random() * availableRestaurants.length);
   const randomRestaurant = availableRestaurants[randomIndex];
 
-  // Display the random restaurant
+  // Get the last week's restaurant
+  const lastWeekRestaurant = previousRestaurants[previousRestaurants.length - 1];
+
+  // Get the current date and time
+  const currentDateTime = new Date();
+  const currentDateOptions = { day: 'numeric', month: 'numeric', year: 'numeric' };
+  const currentTimeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+  const lastUpdatedDate = currentDateTime.toLocaleDateString(undefined, currentDateOptions);
+  const lastUpdatedTime = currentDateTime.toLocaleTimeString(undefined, currentTimeOptions);
+
+  // Display the random restaurant, last week's restaurant, and last updated date
   const randomRestaurantElement = document.getElementById('randomRestaurant');
+  const lastWeekRestaurantElement = document.getElementById('lastWeekRestaurant');
+  const lastUpdatedElement = document.getElementById('lastUpdated');
   randomRestaurantElement.textContent = randomRestaurant;
+  lastWeekRestaurantElement.textContent = "Last week's restaurant was " + lastWeekRestaurant + ".";
+  lastUpdatedElement.textContent = "Last Updated: " + lastUpdatedDate + " at " + lastUpdatedTime;
 }
 
 // Call the function to select and display a random restaurant
