@@ -1,14 +1,76 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Restaurant Selector</title>
+    <title>Swimming Food</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/a/a9/Badminton%2C_London_2012.png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center the content vertically */
+            align-items: center; /* Center the content horizontally */
+            min-height: 100vh;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #111111; /* Set the background color to a dark color */
+            color: #FFFFFF; /* Set the text color to white */
+            margin: 0; /* Remove margin */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto; /* Center the container horizontally */
+        }
+
+        .restaurant-title {
+            font-size: 20px;
+        }
+
+        .restaurant-type {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #FF0000;
+        }
+
+        .quote {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            margin-top: -10px;
+        }
+
+        .last-week-restaurant {
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 30px; /* Reduce the margin-top to adjust spacing */
+            margin-bottom: 15px;
+        }
+
+        .author-name::before {
+            content: "- ";
+        }
+    </style>
 </head>
 <body>
-  <h1>Restaurant Selector</h1>
-  <div id="restaurantContainer">
-    <h2>Random Restaurant:</h2>
-    <p id="randomRestaurant"></p>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1 class="restaurant-title">This week's restaurant is:</h1>
+        <br>
+        <h2 class="restaurant-type" id="randomRestaurant"></h2>
+        <p class="last-week-restaurant" id="lastWeekRestaurant"></p>
+        <br> 
+        <p class="last-updated" id="lastUpdated"></p>
+    </div>
+    <footer>
+        <blockquote class="quote">"Indecision is the thief of opportunity." <cite class="author-name">Democritus</cite></blockquote>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
