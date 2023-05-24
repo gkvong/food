@@ -19,44 +19,66 @@ body {
 }
 
 .restaurant-title {
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 2.8rem;
+  margin-top: 2rem;
 }
 
 .restaurant-type {
-  font-size: 60px;
+  font-size: 5.6rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 1.5rem;
   color: #FF0000;
 }
 
 .last-week-restaurant {
-  font-size: 18px;
+  font-size: 2rem;
 }
 
 .last-updated {
-  font-size: 14px;
-  margin-top: -10px;
+  font-size: 1.6rem;
+  margin-top: -1rem;
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
   .restaurant-title {
-    font-size: 20px;
-    margin-top: 10px; /* Adjust margin for smaller screens */
+    font-size: 2.4rem;
+    margin-top: 1.5rem;
   }
 
   .restaurant-type {
-    font-size: 40px;
-    margin-top: 8px;
+    font-size: 4.8rem;
+    margin-top: 1rem;
   }
 
   .last-week-restaurant {
-    font-size: 16px;
+    font-size: 1.8rem;
   }
 
   .last-updated {
-    font-size: 12px;
-    margin-top: -8px;
+    font-size: 1.4rem;
+    margin-top: -0.8rem;
+  }
+}
+
+/* Media Query for Desktop Devices */
+@media (min-width: 481px) {
+  .restaurant-title {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+  }
+
+  .restaurant-type {
+    font-size: 4.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .last-week-restaurant {
+    font-size: 1.6rem;
+  }
+
+  .last-updated {
+    font-size: 1.2rem;
+    margin-top: -0.6rem;
   }
 }
