@@ -42,7 +42,7 @@ function selectRandomRestaurant() {
   const lastWeekRestaurantElement = document.getElementById('lastWeekRestaurant');
   const lastUpdatedElement = document.getElementById('lastUpdated');
   randomRestaurantElement.textContent = randomRestaurant;
-  lastWeekRestaurantElement.textContent = "Last week's restaurant was " + lastWeekRestaurant + ".";
+  lastWeekRestaurantElement.textContent = "Our last restaurant was " + lastWeekRestaurant + ".";
   lastUpdatedElement.textContent = "Last Updated: " + lastUpdatedDate + " at " + lastUpdatedTime;
 }
 
