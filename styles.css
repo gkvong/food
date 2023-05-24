@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111111;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px; /* Add padding for mobile devices */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.restaurant-title {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.restaurant-type {
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #FF0000;
+}
+
+.last-week-restaurant {
+  font-size: 18px;
+}
+
+.last-updated {
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.quote {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.author-name::before {
+  content: "- ";
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .restaurant-title {
+    font-size: 20px;
+    margin-top: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .restaurant-type {
+    font-size: 40px;
+    margin-top: 8px;
+  }
+
+  .last-week-restaurant {
+    font-size: 16px;
+  }
+
+  .last-updated {
+    font-size: 12px;
+    margin-top: -8px;
+  }
+
+  .quote {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+}
