@@ -1,14 +1,16 @@
 // Function to get the ISO week number for a date
-function getISOWeekNumber(date) {
-  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-  const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
-  return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+function getWeekNumber(date) {
+  const modifiedDate = new Date(date);
+  modifiedDate.setDate(modifiedDate.getDate() + 4 - (modifiedDate.getDay() || 7));
+  const yearStart = new Date(modifiedDate.getFullYear(), 0, 1);
+  const weekNumber = Math.ceil((((modifiedDate - yearStart) / 86400000) + 1) / 7);
+  return weekNumber;
 }
 
 // Function to select a random restaurant excluding the previous week's list
 function selectRandomRestaurant() {
   const currentDate = new Date();
-  const currentWeek = getISOWeekNumber(currentDate);
+  const currentWeek = getWeekNumber(currentDate);
 
   const previousRestaurants = ['Chinese', 'Indian', 'Mexican'];
 
