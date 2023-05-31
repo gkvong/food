@@ -34,11 +34,15 @@ function selectRandomRestaurant() {
 
   // Get the current date and time
   const currentDateTime = new Date();
-  const currentDateOptions = { day: 'numeric', month: 'numeric', year: 'numeric' };
+  const day = currentDateTime.getDate();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+  'July', 'August', 'September', 'October', 'November', 'December'];
+  const month = monthNames[currentDateTime.getMonth()];
+  const lastUpdatedDate = `${day} ${month}`;
+  
   const currentTimeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
-  const lastUpdatedDate = currentDateTime.toLocaleDateString(undefined, currentDateOptions);
   const lastUpdatedTime = currentDateTime.toLocaleTimeString(undefined, currentTimeOptions);
-
+  
   // Display the random restaurant, last week's restaurant, and last updated date
   const randomRestaurantElement = document.getElementById('randomRestaurant');
   const lastWeekRestaurantElement = document.getElementById('lastWeekRestaurant');
