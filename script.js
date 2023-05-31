@@ -12,15 +12,15 @@ function selectRandomRestaurant() {
   const currentDate = new Date();
   const currentWeek = getWeekNumber(currentDate);
 
-  const previousRestaurants = ['Chinese', 'Indian', 'Mexican'];
+  const previousRestaurants = ['Chinese', 'Indian', 'Mexican', 'Chinese'];
 
-  // Include the week number, length of previous restaurants list, and last entry of previous restaurants list in the seed
-  const seed = currentWeek.toString() + previousRestaurants.length.toString() + previousRestaurants[previousRestaurants.length - 1];
+  // Include the week number and last entry of previous restaurants list in the seed
+  const seed = currentWeek.toString() + previousRestaurants[previousRestaurants.length - 1];
 
   // Create a seeded random number generator using the seed
   const rng = new Math.seedrandom(seed);
 
-  const restaurants = ['Chinese', 'Korean', 'Japanese', 'Mexican', 'Indian', 'Vietnamese', 'Thai'];
+  const restaurants = ['Chinese', 'Korean', 'Japanese', 'Mexican', 'Mexican', 'Thai'];
 
   // Exclude previous week's restaurants
   const availableRestaurants = restaurants.filter(restaurant => !previousRestaurants.includes(restaurant));
