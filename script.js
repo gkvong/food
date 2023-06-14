@@ -12,7 +12,7 @@ function selectRandomRestaurant() {
   const currentDate = new Date();
   const currentWeek = getWeekNumber(currentDate);
 
-  const previousRestaurants = ['Chinese', 'Indian', 'Mexican', 'Chinese', 'Korean'];
+  const previousRestaurants = ['Chinese', 'Indian', 'Mexican', 'Chinese', 'Korean', 'Chinese'];
 
   // Include the week number and last entry of previous restaurants list in the seed
   const seed = currentWeek.toString() + previousRestaurants[previousRestaurants.length - 1];
